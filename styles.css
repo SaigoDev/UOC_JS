@@ -35,7 +35,7 @@ header {
 }
 
 /* Buton per generar pokemon */
-#generate-pokemon {
+.generate-pokemon {
     background-color: #27ae60;
     color: white;
     padding: 10px 20px;
@@ -46,11 +46,11 @@ header {
     margin-top: 20px;
 }
 
-#generate-pokemon:hover {
+.generate-pokemon:hover {
     background-color: #2ecc71;
 }
 
-#back-to-list {
+.back-to-list {
     background-color: blue;
     color: white;
     padding: 10px 20px;
@@ -61,7 +61,7 @@ header {
     margin-top: 20px;
 }
 
-#back-to-list:hover {
+.back-to-list:hover {
     background-color: #3498db;
 }
 
@@ -153,32 +153,17 @@ h1 {
 
 /* Estils per la carta hover */
 .pokemon-card {
-    cursor: pointer; /* Mostra el cursor de mà quan passa per sobre la targeta */
+    cursor: pointer; 
 }
 
 .pokemon-card:hover {
     transform: scale(1.05);
-    transition: transform 0.3s ease; /* Efecte d'animació per fer la targeta més interactiva */
+    transition: transform 0.3s ease; 
 }
 /* Estils per a la vista detallada del Pokémon */
 .pokemon-detail {
     text-align: center;
     padding: 20px;
-}
-
-#back-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 20px;
-}
-
-#back-btn:hover {
-    background-color: #2980b9;
 }
 
 /* Estils dinàmics pels tipus */
@@ -342,6 +327,79 @@ h1 {
     color: white;
     font-weight: bold;
     text-transform: capitalize;
+}
+
+/* Combat styles */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;                
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.card {
+  width: 140px;
+  height: 180px;
+  perspective: 700px;      
+  cursor: pointer;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  background: white;
+  border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.back {
+  background: #c62828;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.front {
+  transform: rotateY(180deg);
+  padding: 8px;
+}
+
+.front img {
+  width: 70px;
+  height: 70px;
+}
+
+.resultat {
+  text-align: center;
+  font-size: 22px;
+  margin-top: 40px;          
+  margin-bottom: 20px;
+}
+
+#reset {
+  display: block;
+  margin: 30px auto;         
+  padding: 12px 22px;
+  font-size: 18px;
 }
 
 /* Responsive per pantalles més petites */
